@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock Paper Scissors</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW1+1Bz8dSz/6UZ5LUE2G4n7c5gMIq7v6U8"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="Rock.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Rock Paper Scissors</h1>
+      <div class="score">
+        <div class="computer-score">
+          <h2>Computer Score</h2>
+          <h2><span id="compScore">0</span></h2>
+        </div>
+        <div class="player-score">
+          <h2>Player Score</h2>
+          <h2><span id="playerScore">0</span></h2>
+        </div>
+      </div>
+      <div class="computer">
+        <img src="https://t3.ftcdn.net/jpg/00/31/28/36/360_F_31283623_hLO5Y3jpScc2nHGQyoNVeDsDhD1Q619e.jpg" alt="computer" />
+        <h2 id="msg">Play Game</h2>
+      </div>
+      <div class="player">
+        <img src="https://as2.ftcdn.net/v2/jpg/01/95/60/47/1000_F_195604787_3RlKGhrz3MTGRwPt12dVKXAAjxH6GeCA.jpg" alt="player" />
+        <h2 id="msg2">Play Game</h2>
+      </div>
+      <div class="choices">
+        <button onclick="playerMove('rock')" value="rock">
+          <img src="https://toppng.com/uploads/preview/rock-paper-scissors-circle-11562962494dqcjusyikw.png" alt="rock" />
+        </button>
+        <button onclick="playerMove('paper')" value="paper">
+          <img src="https://www.vhv.rs/dpng/d/535-5351099_rock-paper-scissors-rock-paper-scissors-icons-png.png" alt="paper" />
+        </button>
+        <button onclick="playerMove('scissor')" value="scissor">
+          <img src="https://rock-paper-scissor-game-web-game.netlify.app/image/scissors2.png" alt="scissor" />
+        </button>
+      </div>
+      <button onclick="resetGame()" class="reset-button">Reset Game</button>
+    </div>
+    <script>
+      let playerchoice;
+      let player_score = 0;
+      let comp_score = 0;
+      let comp_msg = '';
+      let player_msg = '';
+
+      function playerMove(choice) {
+        playerchoice = choice;
+        console.log(playerchoice);
+        const strings = ['rock', 'paper', 'scissor'];
+
+        const randomIndex = Math.floor(Math.random() * strings.length);
+
+        const compchoice = strings[randomIndex];
+        console.log(compchoice);
+        if (playerchoice === compchoice) {
+          comp_msg = "Oops It's draw";
+          document.getElementById('msg').innerHTML = comp_msg;
+          console.log(`Oops It's draw`);
+        } else if (
+          (playerchoice === 'rock' && compchoice === 'scissor') ||
+          (playerchoice === 'paper' && compchoice === 'rock') ||
+          (playerchoice === 'scissor' && compchoice === 'paper')
+        ) {
+          player_msg = 'Yes! I won the game!';
+          comp_msg = 'I lost the game!';
+          document.getElementById('msg2').innerHTML = player_msg;
+          document.getElementById('msg').innerHTML = comp_msg;
+          player_score++;
+          document.getElementById('playerScore').innerHTML = player_score;
+        } else {
+          comp_msg = 'I won the game!';
+          player_msg = 'I lost the game!';
+          document.getElementById('msg').innerHTML = comp_msg;
+          document.getElementById('msg2').innerHTML = player_msg;
+          comp_score++;
+          document.getElementById('compScore').innerHTML = comp_score;
+        }
+      }
+
+      function resetGame() {
+        player_score = 0;
+        comp_score = 0;
+        comp_msg = 'Play Game';
+        player_msg = 'Play Game';
+        document.getElementById('compScore').innerHTML = comp_score;
+        document.getElementById('playerScore').innerHTML = player_score;
+        document.getElementById('msg').innerHTML = comp_msg;
+        document.getElementById('msg2').innerHTML = player_msg;
+      }
+    </script>
+  </body>
+</html>

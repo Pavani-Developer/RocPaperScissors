@@ -1,0 +1,143 @@
+body {
+    background-image: linear-gradient(rgba(66, 131, 124, 0.5), rgba(139, 84, 84, 0.5));
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+  }
+  
+  .container {
+    text-align: center;
+  }
+  
+  .container h1 {
+    margin-top: 0px;
+  }
+  
+  .computer img {
+    height: 200px;
+    float: right;
+    margin-right: 280px;
+    margin-top: 80px;
+    border-radius: 40%;
+  }
+  
+  .computer h2 {
+    margin-top: 300px;
+    margin-right: 80px;
+    position: relative;
+    float: right;
+  }
+  
+  .player img {
+    height: 200px;
+    float: left;
+    margin-left: 80px;
+    margin-top: 80px;
+    border-radius: 50%;
+  }
+  
+  .player h2 {
+    margin-top: 300px;
+    margin-left: 80px;
+    position: relative;
+    float: left;
+  }
+  
+  .score {
+    display: flex;
+    margin-left: 38%;
+  }
+  
+  .player-score {
+    margin-left: 10%;
+  }
+  
+  .choices img {
+    height: 100px;
+    border-radius: 50%;
+    transition: transform 0.2s;
+    margin-left: 65px;
+  }
+  
+  .choices img:hover {
+    transform: scale(1.1);
+  }
+  
+  .choices button {
+    background: none;
+    border: none;
+  }
+  .reset-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    background-color: #ff4757;
+    color: white;
+    border-radius: 5px;
+  }
+  
+  @media only screen and (max-width: 600px) {
+    body {
+      background-image: linear-gradient(rgba(8, 186, 168, 0.5), rgba(139, 84, 84, 0.5));
+      height: 130vh;
+    }
+    .container {
+      text-align: center;
+      margin: 0 auto;
+    }
+    .score {
+      display: flex;
+      justify-content: space-around;
+      margin: 10px 0;
+    }
+    .computer,
+    .player {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .computer img{
+        margin-left: 250px;
+        height: 150px;
+        margin-top: 20px;
+        border-radius: 50%;
+    }
+    .player img {
+      height: 150px;
+      margin-top: 20px;
+      border-radius: 50%;
+      margin-right: 100px;
+    }
+    .computer h2{
+        margin-top: 10px;
+        font-size: 16px;
+        margin-left: 50px;
+    }
+    .player h2 {
+      margin-top: 10px;
+      font-size: 16px;
+      margin-right: 90px
+    }
+    .choices {
+      display: flex;
+      justify-content: center;
+      margin: 20px 0;
+    }
+    .choices img {
+      height: 80px;
+      border-radius: 50%;
+      margin: 0 10px;
+      transition: transform 0.2s;
+    }
+    .choices img:hover {
+      transform: scale(1.1);
+    }
+    .reset-button {
+      margin-top: 10px;
+      padding: 8px 16px;
+      font-size: 14px;
+    }
+  }
+  
