@@ -31,7 +31,7 @@ body {
   .player img {
     height: 200px;
     float: left;
-    margin-left: 80px;
+    margin-left: 200px;
     margin-top: 80px;
     border-radius: 50%;
   }
