@@ -63,7 +63,7 @@
         const compchoice = strings[randomIndex];
         console.log(compchoice);
         if (playerchoice === compchoice) {
-          comp_msg = "Oops It's draw";
+          comp_msg = "Oops It's draw 🤪";
           document.getElementById('msg').innerHTML = comp_msg;
           console.log(`Oops It's draw`);
         } else if (
@@ -71,15 +71,15 @@
           (playerchoice === 'paper' && compchoice === 'rock') ||
           (playerchoice === 'scissor' && compchoice === 'paper')
         ) {
-          player_msg = 'Yes! I won the game!';
-          comp_msg = 'I lost the game!';
+          player_msg = 'Yes! I won the game!😁';
+          comp_msg = 'I lost the game!🥲';
           document.getElementById('msg2').innerHTML = player_msg;
           document.getElementById('msg').innerHTML = comp_msg;
           player_score++;
           document.getElementById('playerScore').innerHTML = player_score;
         } else {
-          comp_msg = 'I won the game!';
-          player_msg = 'I lost the game!';
+          comp_msg = 'I won the game!😃';
+          player_msg = 'I lost the game!🥲';
           document.getElementById('msg').innerHTML = comp_msg;
           document.getElementById('msg2').innerHTML = player_msg;
           comp_score++;
